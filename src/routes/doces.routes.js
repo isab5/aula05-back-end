@@ -4,17 +4,17 @@ const docesRoutes = Router();
 
 let guloseimas = [
   {
-    id: 1,
+    id: Number(Math.floor(Math.random() * 99) + 1),
     nome: "Trufa",
     preco: 8.5,
   },
   {
-    id: 2,
+    id: Number(Math.floor(Math.random() * 99) + 1),
     nome: "Brigadeiro",
     preco: 5.0,
   },
   {
-    id: 3,
+    id: Number(Math.floor(Math.random() * 99) + 1),
     nome: "Bomba de chocolate",
     preco: 6.0,
   },
@@ -30,9 +30,9 @@ docesRoutes.post("/", (req, res) => {
   const { nome, preco } = req.body;
 
   const novoDoce = {
-    id: guloseimas.length + 1,
-    nome: nome,
-    preco: preco,
+    id: Number(Math.floor(Math.random() * 99) + 1),
+    nome,
+    preco,
   };
 
   guloseimas.push(novoDoce);
@@ -95,4 +95,4 @@ docesRoutes.delete ("/:id", (req, res) => {
         guloseima,})
 })
 
-export default docesRoutes;
+export default docesRoutes
